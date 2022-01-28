@@ -1,21 +1,20 @@
 
 // TODO: Declare any global variables we need
-let numberOfHeads = 0
-let numberOfTails = 0
-let percentageHeads = 0
-let percentageTails = 0
-let totalFlips = numberOfHeads + numberOfTails
-// let images = ["assets/images/penny-heads.jpg", "assets/images/penny-tails.jpg"]
+let numberOfNoah = 0
+let numberOfRyleigh = 0
+let percentageNoah = 0
+let percentageRyleigh = 0
+let total = numberOfNoah + numberOfRyleigh
 let images = [
     {
-        imagePath: "assets/images/penny-heads.jpg",
-        message: "You flipped heads!",
-        side: "heads"
+        imagePath: "assets/images/Noah.jpg",
+        message: "Cute Noah!",
+        side: "noah"
     },
     {
-        imagePath: "assets/images/penny-tails.jpg",
-        message: "You flipped tails!",
-        side: "tails"
+        imagePath: "assets/images/Ryleigh.jpg",
+        message: "Cute Ryleigh!",
+        side: "ryleigh"
     }
 ]
 
@@ -23,39 +22,39 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById("flip").addEventListener('click', function() {
         let randomImage = images[Math.floor(Math.random() * images.length)]
 
-        document.getElementById("penny").setAttribute("src", randomImage.imagePath)
+        document.getElementById("photo").setAttribute("src", randomImage.imagePath)
 
         document.querySelector(".message-container").textContent = randomImage.message
 
-        if (randomImage.side === "heads") {
+        if (randomImage.side === "noah") {
             // update heads total
-            numberOfHeads++
-            document.getElementById("heads").textContent = numberOfHeads
+            numberOfNoah++
+            document.getElementById("heads").textContent = numberOfNoah
         } else {
             // update tails total
-            numberOfTails++
-            document.getElementById("tails").textContent = numberOfTails
+            numberOfRyleigh++
+            document.getElementById("tails").textContent = numberOfRyleigh
 
         }
 
-        totalFlips++
+        total++
 
-        percentageHeads = Math.round((numberOfHeads / totalFlips) * 100) + "%"
-        percentageTails = Math.round((numberOfTails / totalFlips) * 100) + "%"
+        percentageNoah = Math.round((numberOfNoah / total) * 100) + "%"
+        percentageRyleigh = Math.round((numberOfRyleigh / total) * 100) + "%"
 
-        document.getElementById("heads-percent").textContent = percentageHeads
-        document.getElementById("tails-percent").textContent = percentageTails
+        document.getElementById("heads-percent").textContent = percentageNoah
+        document.getElementById("tails-percent").textContent = percentageRyleigh
 
         document.getElementById("clear").addEventListener("click", function() {
-            console.log("Clear clicked")
-            let numberOfHeads = 0
-            let numberOfTails = 0
-            let percentageHeads = Math.round((numberOfHeads / totalFlips) * 100) + "%"
-            let  percentageTails = Math.round((numberOfTails / totalFlips) * 100) + "%"
-            document.getElementById("tails").textContent = numberOfTails
-            document.getElementById("heads").textContent = numberOfHeads
-            document.getElementById("heads-percent").textContent = percentageHeads
-            document.getElementById("tails-percent").textContent = percentageTails
+            // console.log("Clear clicked")
+            let numberOfNoah = 0
+            let numberOfRyleigh = 0
+            let percentageNoah = Math.round((numberOfNoah / total) * 100) + "%"
+            let  percentageRyleigh = Math.round((numberOfRyleigh / total) * 100) + "%"
+            document.getElementById("tails").textContent = numberOfRyleigh
+            document.getElementById("heads").textContent = numberOfNoah
+            document.getElementById("heads-percent").textContent = percentageNoah
+            document.getElementById("tails-percent").textContent = percentageRyleigh
 
         })
 
